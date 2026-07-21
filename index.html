@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Unscripted Studio — Never run out of ads that convert</title>
 <meta name="description" content="AI creator content for DTC brands — proven hooks, unlimited takes, you own every video from day one. Delivered in days, not weeks.">
+<meta property="og:title" content="Unscripted Studio — Never run out of ads that convert">
+<meta property="og:description" content="AI creator content for DTC brands — proven hooks, unlimited takes, delivered in days.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
@@ -16,11 +19,22 @@
   .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
   a{color:inherit;text-decoration:none}
   nav{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .brand{font-weight:700;font-size:18px;letter-spacing:.3px}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:18px}
+  .brand{font-weight:700;font-size:18px;letter-spacing:.3px;white-space:nowrap}
   .brand span{color:var(--amber)}
-  .cta{background:var(--txt);color:#0A0A0A;padding:10px 20px;border-radius:100px;font-weight:700;font-size:14px;transition:.2s}
+  .navlinks{display:flex;align-items:center;gap:26px}
+  .navlinks a{font-size:14px;color:var(--mute);transition:.2s;font-weight:500}
+  .navlinks a:hover{color:var(--txt)}
+  .cta{background:var(--txt);color:#0A0A0A!important;padding:10px 20px;border-radius:100px;font-weight:700;font-size:14px;transition:.2s}
   .cta:hover{background:var(--amber)}
+  #navtoggle{display:none}
+  .burger{display:none;cursor:pointer;padding:8px;border:1px solid var(--line);border-radius:10px}
+  .burger svg{display:block}
+  @media(max-width:860px){
+    .burger{display:block}
+    .navlinks{display:none;position:absolute;top:64px;left:0;right:0;background:#0A0A0A;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;padding:18px 24px;gap:18px}
+    #navtoggle:checked ~ .navlinks{display:flex}
+  }
   .hero{text-align:center;padding:84px 0 40px}
   .hero h1{font-size:clamp(38px,6.6vw,72px);font-weight:700;line-height:1.04;letter-spacing:-2px}
   .hero h1 em{font-style:normal;color:var(--amber)}
@@ -54,15 +68,32 @@
   .card b{display:block;font-size:18px;margin:8px 0 8px}
   .card p{color:var(--mute);font-size:14.5px}
   .card.x b{text-decoration:line-through;text-decoration-color:var(--amber);text-decoration-thickness:2px}
+  .card .ico{margin-bottom:14px}
+  .card .ico svg{stroke:var(--amber);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
   .own{margin-top:28px;background:var(--panel);border:1px solid var(--amber);border-radius:18px;padding:26px 28px;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
   .own b{color:var(--amber);font-size:18px;white-space:nowrap}
   .own p{color:var(--mute);font-size:15px;flex:1;min-width:240px}
   @media(max-width:900px){.grid4{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:820px){.grid3{grid-template-columns:1fr}.phones{gap:20px}.phone.mid{margin-bottom:0}}
   @media(max-width:560px){.grid4{grid-template-columns:1fr}}
-  .cta-block{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:64px 24px;margin:0 24px}
-  .cta-block h2{margin-top:0}
-  .cta-block p{color:var(--mute);margin:14px auto 28px;max-width:480px}
+  .faq{max-width:760px;margin-top:36px}
+  .faq details{border:1px solid var(--line);border-radius:14px;background:var(--panel);margin-bottom:12px;overflow:hidden}
+  .faq summary{cursor:pointer;padding:20px 24px;font-weight:700;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:after{content:"+";color:var(--amber);font-size:22px;font-weight:400;flex:0 0 auto}
+  .faq details[open] summary:after{content:"–"}
+  .faq .a{padding:0 24px 20px;color:var(--mute);font-size:15px}
+  .about{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:44px 40px;max-width:760px}
+  .about p{color:var(--mute);font-size:16px;margin-top:14px}
+  .about p b{color:var(--txt)}
+  form.quote{max-width:640px;margin-top:36px;display:grid;gap:14px}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.frow{grid-template-columns:1fr}}
+  input,textarea{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:12px;font-size:15px;font-family:inherit;background:var(--panel);color:var(--txt)}
+  input::placeholder,textarea::placeholder{color:#6a6a6a}
+  input:focus,textarea:focus{outline:none;border-color:var(--amber)}
+  button.cta{border:none;cursor:pointer;justify-self:start;font-family:inherit;font-size:15px;padding:13px 26px}
+  .hp{position:absolute;left:-9999px;opacity:0}
   footer{border-top:1px solid var(--line);padding:32px 0;margin-top:72px}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:var(--mute);font-size:14px}
   footer a{color:var(--amber)}
@@ -72,19 +103,30 @@
 
 <nav><div class="wrap">
   <div class="brand">Unscripted<span>.</span>Studio</div>
-  <a class="cta" href="mailto:jack@unscriptedstudio.us">Request a quote</a>
+  <label class="burger" for="navtoggle" aria-label="Menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" stroke="#fff" fill="none" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </label>
+  <input type="checkbox" id="navtoggle">
+  <div class="navlinks">
+    <a href="#work">Work</a>
+    <a href="#why">Why AI UGC</a>
+    <a href="#pipeline">How it works</a>
+    <a href="#faq">FAQ</a>
+    <a href="#about">About</a>
+    <a class="cta" href="#quote">Request a quote</a>
+  </div>
 </div></nav>
 
 <header class="hero"><div class="wrap">
   <h1>Never run out of<br>ads that <em>convert</em>.</h1>
   <p>AI creator content for DTC brands done with influencer roulette — proven hooks, unlimited takes, delivered in days.</p>
   <div class="btns">
-    <a class="cta" href="mailto:jack@unscriptedstudio.us">Work with us</a>
+    <a class="cta" href="#quote">Work with us</a>
     <a class="ghost" href="#why">Why it works</a>
   </div>
 </div></header>
 
-<div class="phones">
+<div class="phones" id="work">
   <div class="phone">
     <div class="frame"><video src="assets/reel_rita.mp4" autoplay muted loop playsinline preload="metadata"></video></div>
     <div class="plabel"><b>Unboxings &amp; reviews</b><span>Ad reads for any product — take after take</span></div>
@@ -130,23 +172,82 @@
   </div>
 </div></section>
 
-<section style="padding-top:0"><div class="wrap">
+<section id="pipeline" style="padding-top:0"><div class="wrap">
   <div class="kick">The Proven-Hook Pipeline</div>
   <h2>Stop buying videos. Install an ad supply.</h2>
   <p class="lead">Every ad we make starts from hook patterns proven on our own organic audience — 2.5M+ views in our first week. Post the batch, let the algorithm tell you what your audience responds to, then put spend behind the winners. You never pay to test a cold idea.</p>
   <div class="grid3">
-    <div class="card"><div class="n">01</div><b>Brief</b><p>Your product, your audience, your goal. We map the hook strategy from patterns already proven to perform.</p></div>
-    <div class="card"><div class="n">02</div><b>We produce</b><p>A monthly volume of short, platform-native clips — consistent creators, unlimited takes, delivered ready to post.</p></div>
-    <div class="card"><div class="n">03</div><b>You scale winners</b><p>Post the batch, watch the data, amplify what wins. Fresh creative on tap, every month.</p></div>
+    <div class="card">
+      <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="18" rx="2.5"/><path d="M9 3.5V6h6V3.5"/><path d="M8.5 11h7M8.5 15h4.5"/></svg></div>
+      <div class="n">01</div><b>Brief</b><p>Your product, your audience, your goal. We map the hook strategy from patterns already proven to perform.</p>
+    </div>
+    <div class="card">
+      <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24"><rect x="2.5" y="6.5" width="13" height="11" rx="2.5"/><path d="M15.5 10.5 21 7.5v9l-5.5-3"/></svg></div>
+      <div class="n">02</div><b>We produce</b><p>A monthly volume of short, platform-native clips — consistent creators, unlimited takes, delivered ready to post.</p>
+    </div>
+    <div class="card">
+      <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M4.5 16.5 10 11l3.5 3.5 6-6.5"/><path d="M15.5 8h4v4"/></svg></div>
+      <div class="n">03</div><b>You scale winners</b><p>Post the batch, watch the data, amplify what wins. Fresh creative on tap, every month.</p>
+    </div>
   </div>
 </div></section>
 
-<section style="padding-top:0"><div class="wrap">
-  <div class="cta-block">
-    <h2>Let's make your next ad.</h2>
-    <p>Tell us what you're working on — we'll come back with a plan and a quote.</p>
-    <a class="cta" href="mailto:jack@unscriptedstudio.us">jack@unscriptedstudio.us</a>
+<section id="faq" style="padding-top:0"><div class="wrap">
+  <div class="kick">FAQ</div>
+  <h2>Questions brands ask us.</h2>
+  <div class="faq">
+    <details>
+      <summary>Is the content AI-generated or real creators?</summary>
+      <div class="a">AI-generated, directed by humans — and we're upfront about that because it's the advantage. Our creators are fully consistent digital faces: same person in every video, unlimited takes, no scheduling, no reshoots. The strategy, scripting, and hook selection behind every clip is human, built on patterns proven on our own multi-million-view account.</div>
+    </details>
+    <details>
+      <summary>Who owns the final content?</summary>
+      <div class="a">You do — fully, from day one. Every delivered video comes with full commercial rights: run it as an ad, repost it, recut it, use it a year from now. No usage windows, no renewal fees, no whitelisting negotiations.</div>
+    </details>
+    <details>
+      <summary>How do you handle brand guidelines and product accuracy?</summary>
+      <div class="a">The brief covers your brand voice, visual guidelines, and product details, and your actual product imagery is worked into the content. Every batch goes through a quality pass for accuracy before delivery, and you review before anything is final.</div>
+    </details>
+    <details>
+      <summary>What does the revision process look like?</summary>
+      <div class="a">You review each delivered batch and flag anything that misses. Because our creators are digital, revisions are fast — a new take costs hours, not another shoot. Revision rounds depend on your plan, and monthly clients get priority turnaround.</div>
+    </details>
+    <details>
+      <summary>How do you handle AI disclosure requirements?</summary>
+      <div class="a">We stay current on platform policies (Meta and TikTok both have AI-content labeling options) and flag what applies to your use case. Disclosure norms are evolving, and we build content that performs with or without the label — authenticity of the hook matters more than how the footage was made.</div>
+    </details>
   </div>
+</div></section>
+
+<section id="about" style="padding-top:0"><div class="wrap">
+  <div class="kick">About</div>
+  <h2>Founder-led, proof-first.</h2>
+  <div class="about" style="margin-top:36px">
+    <p><b>Unscripted Studio is run by Jack Dolan</b>, and it started as our own experiment: build an AI creator account from zero and see if it could win real attention. It did — 2.5M+ views and a six-figure audience in the first week, 100% organic.</p>
+    <p>That account became our lab. Every hook pattern, every format, every first-two-seconds decision we make for clients was tested on our own content first — with our own time and money on the line.</p>
+    <p>Founder-led means lean: no account managers between you and the person making your content, faster turnaround, and a direct line when you need something yesterday.</p>
+  </div>
+</div></section>
+
+<section id="quote" style="padding-top:0"><div class="wrap">
+  <div class="kick">Get started</div>
+  <h2>Let's make your next ad.</h2>
+  <p class="lead">Tell us what you're working on — we'll come back with a plan and a quote, usually within a day.</p>
+  <form class="quote" action="https://formsubmit.co/jack@unscriptedstudio.us" method="POST">
+    <input type="hidden" name="_subject" value="New quote request — unscriptedstudio.us">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+    <div class="frow">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Email" required>
+    </div>
+    <div class="frow">
+      <input type="text" name="brand" placeholder="Brand / website">
+      <input type="text" name="product" placeholder="What do you sell?">
+    </div>
+    <textarea name="details" rows="4" placeholder="What do you need? (e.g. UGC ads for a product launch, monthly content, a spokesperson series)"></textarea>
+    <button type="submit" class="cta">Send request</button>
+  </form>
 </div></section>
 
 <footer><div class="wrap">
