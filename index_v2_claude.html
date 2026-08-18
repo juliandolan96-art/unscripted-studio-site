@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unscripted Studio, Jack. Human UGC for health tech and AI.</title>
+<meta name="description" content="Jack is a human UGC creator in Delray Beach, Florida. Health tech and AI products, demoed and explained in under 60 seconds, shot and edited by the same person.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F4F2ED;--ink:#161512;--mute:#6E6A61;--line:#DDD9CE;--accent:#2848D6;--card:#FFFFFF}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Sora",-apple-system,sans-serif;line-height:1.65;font-size:16px}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:#fff}
+
+  .shell{display:grid;grid-template-columns:minmax(320px,420px) 1fr;gap:0;max-width:1280px;margin:0 auto}
+
+  /* left rail */
+  .rail{position:sticky;top:0;height:100vh;height:100dvh;padding:48px 44px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--line)}
+  .rail .top .mark{font-weight:700;font-size:15px;letter-spacing:.2px}
+  .rail .top .mark i{font-style:normal;color:var(--accent)}
+  .rail h1{font-size:clamp(30px,3vw,40px);font-weight:700;line-height:1.15;letter-spacing:-1px;margin-top:26vh}
+  .rail h1 span{color:var(--accent)}
+  .rail .sub{color:var(--mute);font-size:15px;margin-top:16px;max-width:34ch}
+  .rail .actions{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-block;background:var(--ink);color:#fff;padding:12px 22px;border-radius:100px;font-size:14px;font-weight:700;transition:background .2s}
+  .btn:hover{background:var(--accent)}
+  .btn.line{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+  .btn.line:hover{border-color:var(--accent);color:var(--accent);background:transparent}
+  .rail .foot{color:var(--mute);font-size:13px;line-height:1.7}
+  .rail .foot b{color:var(--ink);font-weight:700}
+
+  /* right column */
+  .col{padding:0 0 0 0;border-left:none}
+  section{padding:76px 56px;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(24px,2.6vw,34px);font-weight:700;letter-spacing:-.8px;line-height:1.18}
+  .body{color:var(--mute);font-size:16px;margin-top:14px;max-width:58ch}
+  .body b{color:var(--ink)}
+
+  /* opener */
+  .opener{min-height:52vh;display:flex;flex-direction:column;justify-content:center}
+  .opener h2{font-size:clamp(30px,3.4vw,46px);max-width:22ch}
+  .opener h2 em{font-style:normal;color:var(--accent)}
+
+  /* work */
+  .feature{display:grid;grid-template-columns:minmax(240px,320px) 1fr;gap:40px;align-items:center;margin-top:40px}
+  .vidcard{border-radius:20px;overflow:hidden;background:#000;box-shadow:0 18px 50px rgba(22,21,18,.16)}
+  .vidcard video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}
+  .feature .note h3{font-size:19px;font-weight:700}
+  .feature .note p{color:var(--mute);font-size:15px;margin-top:10px;max-width:40ch}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
+  .duo figure{margin:0}
+  .duo figcaption{margin-top:14px;font-size:14px;color:var(--mute)}
+  .duo figcaption b{display:block;color:var(--ink);font-size:15px;font-weight:700}
+
+  /* proof */
+  .proofshot{margin-top:36px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+  .proofshot img{display:block;width:100%}
+  .prooffacts{display:flex;gap:36px;flex-wrap:wrap;margin-top:26px}
+  .prooffacts div b{display:block;font-size:26px;font-weight:700;color:var(--accent)}
+  .prooffacts div span{font-size:13px;color:var(--mute)}
+
+  /* process */
+  .steps{margin-top:36px;counter-reset:step}
+  .step{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:26px 0;border-top:1px solid var(--line)}
+  .step:last-child{border-bottom:1px solid var(--line)}
+  .step .num{counter-increment:step;font-weight:700;color:var(--accent);font-size:15px}
+  .step .num:before{content:"0" counter(step)}
+  .step h3{font-size:17px;font-weight:700}
+  .step p{color:var(--mute);font-size:15px;margin-top:6px;max-width:52ch}
+
+  /* faq */
+  .qa{margin-top:32px;max-width:640px}
+  .qa details{border-top:1px solid var(--line)}
+  .qa details:last-child{border-bottom:1px solid var(--line)}
+  .qa summary{cursor:pointer;padding:20px 4px;font-weight:700;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
+  .qa summary::-webkit-details-marker{display:none}
+  .qa summary:after{content:"+";color:var(--accent);font-size:20px}
+  .qa details[open] summary:after{content:"-"}
+  .qa .a{padding:0 4px 22px;color:var(--mute);font-size:15px;max-width:56ch}
+
+  /* contact */
+  form{margin-top:32px;display:grid;gap:14px;max-width:560px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  input,textarea{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:12px;font-size:15px;font-family:inherit;background:var(--card);color:var(--ink)}
+  input::placeholder,textarea::placeholder{color:#9B968A}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+  button.btn{border:none;cursor:pointer;font-family:inherit;justify-self:start}
+  .hp{position:absolute;left:-9999px;opacity:0}
+
+  /* reveal */
+  @media (prefers-reduced-motion: no-preference){
+    .rv{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+    .rv.in{opacity:1;transform:none}
+  }
+
+  @media(max-width:900px){
+    .shell{grid-template-columns:1fr}
+    .rail{position:static;height:auto;border-right:none;border-bottom:1px solid var(--line);padding:36px 24px;gap:28px}
+    .rail h1{margin-top:28px}
+    section{padding:56px 24px}
+    .feature{grid-template-columns:1fr;gap:24px}
+    .feature .vidcard{max-width:320px}
+    .duo{grid-template-columns:1fr}
+    .duo .vidcard{max-width:320px}
+    .row2{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <aside class="rail">
+    <div class="top">
+      <div class="mark">Unscripted<i>.</i>Studio</div>
+      <h1>A real person, <span>on purpose.</span></h1>
+      <p class="sub">I'm Jack. I make UGC for health tech and AI brands that reads like a person talking, because it is one.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn line" href="#work">See the work</a>
+      </div>
+    </div>
+    <div class="foot">
+      <b>Delray Beach, Florida (US)</b><br>
+      jack@unscriptedstudio.us
+    </div>
+  </aside>
+
+  <main class="col">
+
+    <section class="opener rv">
+      <h2>Brands don't have a content problem. They have a <em>trust</em> problem.</h2>
+      <p class="body">Viewers skip anything that smells like an ad. The fix isn't more polish, it's less. One person, one camera, a hook that earns the next three seconds. That's the entire product here.</p>
+    </section>
+
+    <section id="work" class="rv">
+      <h2>The work.</h2>
+      <div class="feature">
+        <div class="vidcard"><video class="reelvid" src="assets/reel_billo.mp4" autoplay muted loop playsinline preload="auto"></video></div>
+        <div class="note">
+          <h3>Talking head, straight through</h3>
+          <p>No captions, no cutaways, nowhere to hide. This is the format that shows whether someone can actually hold a lens, and it's the one I lead with.</p>
+        </div>
+      </div>
+      <div class="duo">
+        <figure>
+          <div class="vidcard"><video class="reelvid" src="assets/reel_whoop.mp4" autoplay muted loop playsinline preload="auto"></video></div>
+          <figcaption><b>Comparison ad, wearable tech</b>Testimonial format with a data beat, captioned and cut for feed pace.</figcaption>
+        </figure>
+        <figure>
+          <div class="vidcard"><video class="reelvid" src="assets/reel_ai_demo.mp4" autoplay muted loop playsinline preload="auto"></video></div>
+          <figcaption><b>Explainer with b-roll</b>Product demo with cutaways and screen capture, built to teach fast.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="rv">
+      <h2>Why trust a new face? Because I ran the numbers before I ever stood in front of a camera.</h2>
+      <p class="body"><b>I build AI-generated content brands as production work.</b> One of them went from zero to 3.6M+ views and 12K+ followers in 45 days. None of that is me on camera, and I won't pretend it is. It's the reason I know what a working hook looks like before I film one: I've tested hundreds of them with my own money and time.</p>
+      <div class="proofshot"><img src="assets/dashboard_flagship.jpg" alt="Analytics dashboard for the AI content brand I run, showing 622.9K views in the last 30 days and a 1.3M view single post" loading="lazy"></div>
+      <div class="prooffacts">
+        <div><b>45 days</b><span>Zero to 3.6M+ views</span></div>
+        <div><b>1.3M</b><span>Best single post</span></div>
+        <div><b>5 yrs</b><span>Direct sales, face to face</span></div>
+      </div>
+    </section>
+
+    <section class="rv">
+      <h2>How a video gets made here.</h2>
+      <div class="steps">
+        <div class="step"><div class="num"></div><div><h3>You send the brief</h3><p>Product, audience, goal. If something in the brief will hurt the video, I'll say so before filming, not after delivery.</p></div></div>
+        <div class="step"><div class="num"></div><div><h3>I write the hook first</h3><p>The first three seconds get more of my time than the other fifty-seven. Then I film on my own setup and edit every cut myself.</p></div></div>
+        <div class="step"><div class="num"></div><div><h3>You get a file built for feed</h3><p>Platform-native pacing, clean audio, same-day revisions when something misses. Then it's yours to run.</p></div></div>
+      </div>
+    </section>
+
+    <section class="rv">
+      <h2>Straight answers.</h2>
+      <div class="qa">
+        <details>
+          <summary>Is this you, or an AI avatar?</summary>
+          <div class="a">Me, every time. I use AI in the edit pipeline for speed, transcription and cut planning mostly, but the face, voice and delivery are a real person in Delray Beach. Given what I build on the production side, I'm strict about that line.</div>
+        </details>
+        <details>
+          <summary>What niche do you cover?</summary>
+          <div class="a">Health tech and AI: wearables, apps and tools, demoed and explained in under 60 seconds. I use these products daily, so I talk like a user, not a script. Good briefs outside the niche are welcome too.</div>
+        </details>
+        <details>
+          <summary>How do deals work?</summary>
+          <div class="a">CPM and flat-fee deliverables to start, hybrid or retainer once we have a track record together. Usage rights, exclusivity and raw footage all get agreed upfront, in writing, before I film.</div>
+        </details>
+        <details>
+          <summary>Do you post it or just deliver it?</summary>
+          <div class="a">Either. Finished file for your ad account, or posted from a dedicated account if the campaign is structured that way.</div>
+        </details>
+        <details>
+          <summary>How fast are revisions?</summary>
+          <div class="a">Usually same day. A brand recently rejected a pitch video over editing style; I diagnosed it, rebuilt it and resubmitted within hours. Built for volume, I hit deadlines.</div>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact" class="rv" style="border-bottom:none">
+      <h2>Tell me what you're selling.</h2>
+      <p class="body">I'll come back with a plan and a rate, usually within a day.</p>
+      <form action="https://formsubmit.co/jack@unscriptedstudio.us" method="POST">
+        <input type="hidden" name="_subject" value="New inquiry, unscriptedstudio.us (v2)">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+        <div class="row2">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <input type="text" name="brand" placeholder="Brand / product">
+        <textarea name="details" rows="4" placeholder="What do you need? One video, a CPM campaign, ongoing content?"></textarea>
+        <button type="submit" class="btn">Send it</button>
+      </form>
+    </section>
+
+  </main>
+</div>
+
+<script>
+// force reel playback, same fix as v1: autoplay attributes alone don't reliably fire
+(function(){
+  var vids = document.querySelectorAll('video.reelvid');
+  function tryPlay(v){ var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+  vids.forEach(function(v){
+    v.muted = true;
+    if (v.readyState >= 2) tryPlay(v);
+    else v.addEventListener('loadeddata', function(){ tryPlay(v); }, {once:true});
+  });
+  var retry = function(){ vids.forEach(tryPlay); };
+  window.addEventListener('touchstart', retry, {once:true});
+  window.addEventListener('click', retry, {once:true});
+})();
+// scroll reveals via IntersectionObserver, disabled automatically under reduced motion by CSS
+(function(){
+  var els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold:.15});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>
