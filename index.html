@@ -57,6 +57,12 @@
   .heroemail{margin-top:14px}
   .heroemail a{color:var(--mute);font-size:14px;font-weight:600;border-bottom:1px solid var(--line);padding-bottom:2px;transition:.2s}
   .heroemail a:hover{color:var(--txt);border-color:var(--amber)}
+  .heroemail .sep{margin:0 .55em;color:var(--mute)}
+  .tapnote a{color:var(--txt);font-weight:600;border-bottom:1px solid var(--line)}
+  .tapnote a:hover{border-color:var(--amber)}
+  .about a{color:var(--txt);font-weight:600;border-bottom:1px solid var(--line)}
+  .about a:hover{border-color:var(--amber)}
+  .contact-direct{margin-top:16px}
   .hero .btns{margin-top:32px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
   .ghost{border:1px solid var(--line);padding:10px 20px;border-radius:100px;font-weight:700;font-size:14px;color:var(--mute);transition:.2s}
   .ghost:hover{border-color:var(--txt);color:var(--txt)}
@@ -79,7 +85,7 @@
   .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:56px;padding-top:26px}
   .stats .cap{text-align:center;font-size:13px;color:var(--mute);letter-spacing:.4px}
   .stats .cap b{color:var(--txt)}
-  .stats .wrap{display:grid;grid-template-columns:repeat(3,1fr);text-align:center}
+  .stats .wrap{display:grid;grid-template-columns:repeat(2,1fr);text-align:center}
   .stat{padding:34px 10px;border-right:1px solid var(--line)}
   .stat:last-child{border-right:0}
   .stat b{display:block;font-size:clamp(26px,4vw,42px);font-weight:700;color:var(--amber);line-height:1.1}
@@ -152,7 +158,7 @@
 <header class="hero"><div class="wrap">
   <h1>A real person,<br><em>on purpose</em>.</h1>
   <p>I'm Jack. I make UGC for health tech and AI brands that reads like a "real" person talking, because it is one.</p>
-  <p class="heroemail"><a href="mailto:jack@unscriptedstudio.us">jack@unscriptedstudio.us</a></p>
+  <p class="heroemail"><a href="mailto:jack@unscriptedstudio.us">jack@unscriptedstudio.us</a><span class="sep">·</span><a href="https://www.tiktok.com/@jack__dolan" target="_blank" rel="noopener">UGC / work TikTok · @jack__dolan</a></p>
   <div class="btns">
     <a class="cta" href="#work">See the work</a>
     <a class="ghost" href="#contact">Get in touch</a>
@@ -167,7 +173,7 @@
   </div>
   <div class="phone mid">
     <div class="frame" data-src="assets/reel_higgsfield_full.mp4"><video class="reelvid" src="assets/reel_higgsfield.mp4" poster="assets/reel_higgsfield_poster.jpg" autoplay muted loop playsinline preload="auto"></video><span class="tap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 6a9 9 0 0 1 0 12"/></svg></span></div>
-    <div class="plabel"><b>Case-study ad</b><span>VO + b-roll, built on my own 3M-view page</span></div>
+    <div class="plabel"><b>Case-study ad</b><span>VO + b-roll, built on an AI brand I operate</span></div>
   </div>
   <div class="phone">
     <div class="frame" data-src="assets/reel_pavlok_full.mp4"><video class="reelvid" src="assets/reel_pavlok.mp4" poster="assets/reel_pavlok_poster.jpg" autoplay muted loop playsinline preload="auto"></video><span class="tap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 6a9 9 0 0 1 0 12"/></svg></span></div>
@@ -182,6 +188,7 @@
     <div class="plabel"><b>Live demo</b><span>App-in-hand walkthrough, dictated command on camera</span></div>
   </div>
 </div>
+<p class="tapnote">Dedicated UGC / work account: <a href="https://www.tiktok.com/@jack__dolan" target="_blank" rel="noopener">@jack__dolan</a></p>
 
 <div class="lightbox" id="lightbox">
   <button type="button" class="lb-close" id="lbClose" aria-label="Close">✕</button>
@@ -191,9 +198,8 @@
 <div class="stats">
   <div class="cap">Real numbers from work I actually do, not a projection.</div>
   <div class="wrap">
-  <div class="stat"><b>3.6M+</b><span>Views in 45 days (AI brand)</span></div>
   <div class="stat"><b>5</b><span>Years in direct sales</span></div>
-  <div class="stat"><b>Same-day</b><span>Typical revision turnaround</span></div>
+  <div class="stat"><b>48-hour</b><span>Typical revision turnaround</span></div>
 </div></div>
 
 <section><div class="wrap">
@@ -207,19 +213,8 @@
   <div class="grid4">
     <div class="card"><div class="n">Sales</div><b>Five years closing face to face</b><p>Reading a room and staying persuasive without sounding like a pitch. That's the whole job on camera too.</p></div>
     <div class="card"><div class="n">Operator</div><b>I built an AI content brand first</b><p>Zero to 3.6M+ views and 12K+ followers in 45 days, hands-on. That's production work, not me on camera, but it's why I know what a working hook looks like.</p></div>
-    <div class="card"><div class="n">Speed</div><b>Same-day turnaround</b><p>Had a pitch video rejected over editing style. Diagnosed it, rebuilt it, resubmitted the same day.</p></div>
+    <div class="card"><div class="n">Speed</div><b>48-hour turnaround</b><p>Typical revision window is 48 hours. When a pitch video got rejected over editing style, I diagnosed it, rebuilt it, and turned it around without sitting in a queue.</p></div>
     <div class="card"><div class="n">Craft</div><b>I edit everything myself</b><p>Every cut, caption, and sync pass runs through my own production pipeline. Nothing gets handed off.</p></div>
-  </div>
-  <div class="proof-grid">
-    <div class="proof-shot"><img src="assets/dashboard_flagship.jpg" alt="Real analytics dashboard showing 622.9K views in the last 30 days, with individual posts at 300K, 507K and 1.3M views" loading="lazy"></div>
-    <div class="proof-side">
-      <p><b>Why trust a new face? Because I ran the numbers first.</b> I build AI-generated content brands as production work. One went from zero to 3.6M+ views and 12K+ followers in 45 days. None of it is me on camera, and I won't pretend it is. It's why I know what a working hook looks like before I film one: I've tested hundreds with my own money and time.</p>
-      <div class="proof-nums">
-        <div><b>622.9K</b><span>Views, last 30 days</span></div>
-        <div><b>1.3M</b><span>Single post</span></div>
-        <div><b>12K</b><span>Followers built organically</span></div>
-      </div>
-    </div>
   </div>
 </div></section>
 
@@ -277,14 +272,26 @@
   <h2>Five years in sales, now on the other side of the camera.</h2>
   <div class="about" style="margin-top:36px">
     <p><b>I'm Jack, and I live in Delray Beach, Florida.</b> I spent five years in direct sales, sitting across a kitchen table making the case for a product face to face. Comfort on camera and the instinct not to sound like a pitch both came from those years, not from a course.</p>
-    <p>Alongside that, I build AI-generated content brands. One I run, Good Doodle, went from zero to 3.6M+ views and 12K+ followers in 45 days. That's production work, not me on camera, but it's where I learned the mechanics behind why content actually moves: hooks, pacing, retention, the whole system. My own on-camera creator account is newer and growing, and the two feed each other now.</p>
+    <p>Alongside that, I build AI-generated content brands. One I run, Good Doodle, went from zero to 3.6M+ views and 12K+ followers in 45 days. That's production work, not me on camera, but it's where I learned the mechanics behind why content actually moves: hooks, pacing, retention, the whole system. My dedicated on-camera UGC account is <a href="https://www.tiktok.com/@jack__dolan" target="_blank" rel="noopener">@jack__dolan</a>. It's newer and growing, and the two feed each other now.</p>
     <p>Unscripted Studio is where those two things meet. No account managers, no middle layer between you and the person actually making your content.</p>
+  </div>
+  <div class="proof-grid">
+    <div class="proof-shot"><img src="assets/dashboard_flagship.jpg" alt="Good Doodle analytics dashboard (AI content brand I operate, not on-camera UGC) showing 622.9K views in the last 30 days, with individual posts at 300K, 507K and 1.3M views" loading="lazy"></div>
+    <div class="proof-side">
+      <p><b>Good Doodle is production work, not me on camera.</b> I build AI-generated content brands as operator work. None of these views are my UGC reel, and I won't pretend they are. It's why I know what a working hook looks like before I film one: I've tested hundreds with my own money and time.</p>
+      <div class="proof-nums">
+        <div><b>622.9K</b><span>Good Doodle, last 30 days</span></div>
+        <div><b>1.3M</b><span>One Good Doodle post</span></div>
+        <div><b>12K</b><span>Good Doodle followers</span></div>
+      </div>
+    </div>
   </div>
 </div></section>
 
 <section id="contact" style="padding-top:0"><div class="wrap">
   <h2>Let's talk about your next video.</h2>
   <p class="lead">Tell me what you need. I'll come back with a plan and a rate, usually within a day.</p>
+  <p class="heroemail contact-direct"><a href="mailto:jack@unscriptedstudio.us">jack@unscriptedstudio.us</a><span class="sep">·</span><a href="https://www.tiktok.com/@jack__dolan" target="_blank" rel="noopener">UGC / work TikTok · @jack__dolan</a></p>
   <form class="quote" action="https://formsubmit.co/jack@unscriptedstudio.us" method="POST">
     <input type="hidden" name="_subject" value="New inquiry, unscriptedstudio.us">
     <input type="hidden" name="_captcha" value="false">
@@ -304,7 +311,7 @@
 
 <footer><div class="wrap">
   <div>© <span id="yr"></span> Unscripted Studio</div>
-  <div>Jack, South Florida (US-based) · <a href="mailto:jack@unscriptedstudio.us">jack@unscriptedstudio.us</a> · <a href="https://www.tiktok.com/@julian.dolan1" target="_blank" rel="noopener">TikTok</a> · <a href="/privacy.html">Privacy</a></div>
+  <div>Jack, South Florida (US-based) · <a href="mailto:jack@unscriptedstudio.us">jack@unscriptedstudio.us</a> · <a href="https://www.tiktok.com/@jack__dolan" target="_blank" rel="noopener">UGC TikTok · @jack__dolan</a> · <a href="/privacy.html">Privacy</a></div>
 </div></footer>
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
